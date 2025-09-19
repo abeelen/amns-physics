@@ -108,7 +108,7 @@ ax.set_ylim(-10, 10)
 ax.set_axis_off()
 
 draw_mirror(ax, x=0, sc=sc)
-draw_vertical_arrow(ax, pos=sa, size=ab)
+draw_vertical_arrow(ax, pos=sa, size=ab, virtual=sa > 0)
 
 if central_ray:
     draw_central_ray(ax, sa=sa, ab=ab, sc=sc)
