@@ -5,7 +5,7 @@ import streamlit as st
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 st.set_page_config(
-    page_title="Hello",
+    page_title="AMNS-Physique",
     page_icon="👋",
 )
 

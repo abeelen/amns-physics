@@ -11,7 +11,7 @@ from numpy.polynomial.polynomial import polyfit, polyval
 from common.items import draw_lens
 from common.utils import arrow_dxdy, draw_vertical_arrow
 
-st.set_page_config(page_title="Lentilles Minces", page_icon="📈")
+st.set_page_config(page_title="Lentilles Minces", page_icon="🔎")
 
 st.title("Lentilles minces")
 

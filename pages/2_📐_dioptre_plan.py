@@ -14,7 +14,7 @@ max_n = 10.0
 cmap = plt.colormaps.get_cmap('Blues')
 norm = colors.Normalize(min_n, max_n)
 
-st.set_page_config(page_title="Dioptre Plan", page_icon="📈")
+st.set_page_config(page_title="Dioptre Plan", page_icon="📐")
 
 st.title('Dioptre plan')
 
