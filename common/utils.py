@@ -3,7 +3,7 @@ from matplotlib import patches
 
 
 def draw_vertical_arrow(ax, pos=0, size=2, color="k", label_bottom="A", label_head="B", virtual=False):
-    arrow_kwargs = dict(length_includes_head=True, head_width=0.5, head_length=0.5, color=color)
+    arrow_kwargs = dict(length_includes_head=True, head_width=0.3, head_length=0.1, color=color)
     text_kwargs = dict(horizontalalignment="center", color=color)
 
     x_min, x_max = ax.get_xlim()
@@ -14,11 +14,18 @@ def draw_vertical_arrow(ax, pos=0, size=2, color="k", label_bottom="A", label_he
         arrow_kwargs["linestyle"] = "dotted"
     ax.arrow(pos, 0, dx=0, dy=size, **arrow_kwargs)
 
-    ax.text(pos, -np.sign(size) * 0.8, label_bottom, verticalalignment="top", **text_kwargs)
+    text_kwargs["verticalalignment"] = "top" if np.sign(size) > 0 else "bottom"
+    ax.text(
+        pos,
+        -np.sign(size) * 0.1,
+        label_bottom,
+        **text_kwargs,
+    )
     y_min, y_max = ax.get_ylim()
     if size < y_min or size > y_max:
         return
-    ax.text(pos, size + np.sign(size) * 0.8, label_head, verticalalignment="bottom", **text_kwargs)
+    text_kwargs["verticalalignment"] = "bottom" if np.sign(size) > 0 else "top"
+    ax.text(pos, size + np.sign(size) * 0.1, label_head, **text_kwargs)
 
 
 def arrow_dxdy(xs, ys, scale=0.05):
