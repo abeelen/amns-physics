@@ -110,7 +110,8 @@ n1 = st.sidebar.slider(r"$n_1$", min_n, max_n)
 n2 = st.sidebar.slider(r"$n_2$", min_n, max_n)
 i1 = st.sidebar.slider(r"$i_1$", 0, 90, 30)
 
-event = st.dataframe(data, on_select="rerun", selection_mode="single-row")
+with st.expander('Preréglages'):
+    event = st.dataframe(data, on_select="rerun", selection_mode="single-row")
 
 if len(event.selection["rows"]):
     selected_row = event.selection["rows"][0]

@@ -238,14 +238,16 @@ parallel_ray = st.sidebar.checkbox("Parallel")
 central_ray = st.sidebar.checkbox("Centre")
 focal_ray = st.sidebar.checkbox("Focale")
 
+with st.expander('Preréglages'):
 
-lens_type = st.selectbox("Type de lentilles", ["Convergente", "Divergente"], index=0, label_visibility="collapsed")
-if lens_type == "Convergente":
-    data = pd.DataFrame(data_convergente)
-elif lens_type == "Divergente":
-    data = pd.DataFrame(data_divergente)
+    lens_type = st.selectbox("Type de lentilles", ["Convergente", "Divergente"], index=0, label_visibility="collapsed")
+    if lens_type == "Convergente":
+        data = pd.DataFrame(data_convergente)
+    elif lens_type == "Divergente":
+        data = pd.DataFrame(data_divergente)
 
-event = st.dataframe(data, on_select="rerun", selection_mode="single-row")
+    event = st.dataframe(data, on_select="rerun", selection_mode="single-row")
+
 if len(event.selection["rows"]):
     selected_row = event.selection["rows"][0]
     of = -data.iloc[selected_row]["OF' [cm]"]

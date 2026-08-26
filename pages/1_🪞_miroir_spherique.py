@@ -189,13 +189,14 @@ image = st.sidebar.checkbox("Image")
 parallel_ray = st.sidebar.checkbox("Parallel")
 central_ray = st.sidebar.checkbox("Centre")
 
-mirror_type = st.selectbox("Type de miroir", ["Concave", "Convexe"], index=0, label_visibility="collapsed")
-if mirror_type == "Concave":
-    data = pd.DataFrame(data_concave)
-elif mirror_type == "Convexe":
-    data = pd.DataFrame(data_convexe)
+with st.expander('Preréglages'):
+    mirror_type = st.selectbox("Type de miroir", ["Concave", "Convexe"], index=0, label_visibility="collapsed")
+    if mirror_type == "Concave":
+        data = pd.DataFrame(data_concave)
+    elif mirror_type == "Convexe":
+        data = pd.DataFrame(data_convexe)
 
-event = st.dataframe(data, on_select="rerun", selection_mode="single-row")
+    event = st.dataframe(data, on_select="rerun", selection_mode="single-row")
 
 if len(event.selection["rows"]):
     selected_row = event.selection["rows"][0]
