@@ -3,7 +3,7 @@ from matplotlib import patches
 
 
 def draw_mirror(ax, x=0, sc=-2, half_height=1):
-    delta = -np.sign(sc) * 0.5
+    delta = np.sign(sc) * 0.5
     ax.plot([x + delta, x, x, x + delta], [half_height + 0.1, half_height, -half_height, -half_height - 0.1], c="k")
     ax.add_patch(
         patches.Rectangle(
