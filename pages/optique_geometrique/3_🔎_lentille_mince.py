@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parent.parent))
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -222,8 +222,6 @@ data_divergente = {
     "OA [cm]": [-3, -2, -1, +3, +2, +1],
     "AB [cm]": [+0.8] * 6,
 }
-
-st.set_page_config(page_title="Lentilles Minces", page_icon="🔎")
 
 st.title("Lentilles minces")
 

@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parent.parent))
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -175,8 +175,6 @@ data_convexe = {
     "AB [cm]": [+0.8] * 6,
 }
 
-
-st.set_page_config(page_title="Miroir Sphérique", page_icon="🪞")
 
 st.title("Miroir Sphérique")
 

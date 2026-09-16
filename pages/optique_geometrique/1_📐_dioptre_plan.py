@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parent.parent))
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
 
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
@@ -99,8 +99,6 @@ def plot_figure(i1, n1, n2, i2=None, i_lim=None, radius=np.sqrt(2)):
 
 data = {"n1": [1, 1.5, 1.5], "n2": [1.5, 1, 1], "i1 [°]": [45, 30, 41.5]}
 data = pd.DataFrame(data)
-
-st.set_page_config(page_title="Dioptre Plan", page_icon="📐")
 
 st.title("Dioptre plan")
 
